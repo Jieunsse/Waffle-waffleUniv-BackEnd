@@ -10,12 +10,11 @@ public class SwaggerConfig {
 
     @Bean
     public OpenAPI openAPI() {
-        Info info = new Info()
-                .version("v1.0")
-                .title("goStock API")
-                .description("goStock 커뮤니티 프로젝트 API");
-
         return new OpenAPI()
-                .info(info);
+                .info(apiInfo());
+    }
+
+    private Info apiInfo() {
+        return new Info().title("goStock").description("goStock REST API").version("1.0.0");
     }
 }
